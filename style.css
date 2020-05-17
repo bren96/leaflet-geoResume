@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+
+/* MOBILE */
+.resume {
+  border: solid 1px red;
+  height: 35%;
+  width: 100%;
+  overflow: scroll;
+}
+.map {
+  height: 65%;
+  width: 100%;
+  border: solid 1px blue;
+}
+
+.job-button{
+  display: block;
+  border: solid 1px green;
+  width: 100%;
+  height: 50px;
+}
+
+/* DESKTOP/TABLET */
+@media only screen and (min-width: 768px){
+  .resume {
+    height: 100vh;
+    width: 25%;
+    float: left;
+  }
+  .map {
+    height: 100vh;
+    width: 75%;
+    float: left;
+  }
+}
