@@ -14,12 +14,11 @@ body{
 /* MOBILE */
 .resume {
   border: solid 1px red;
-  height: 35%;
+  min-height: 100%;
   width: 100%;
-  overflow: scroll;
 }
 .map {
-  height: 65%;
+  height: 100%;
   width: 100%;
   border: solid 1px blue;
 }
