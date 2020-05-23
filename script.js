@@ -14,3 +14,18 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     zoomOffset: -1,
     accessToken: mapbox_tolken
 }).addTo(resume_map);
+
+function job_click(a){
+  console.log(a)
+};
+
+// For each item in resumeData, create button in sidebar
+button_area = document.getElementById("button_div");
+for (var a in resumeData){
+  var new_button = document.createElement("BUTTON")
+  new_button.type = "button";
+  new_button.className = "job-button";
+  new_button.setAttribute("onclick", "job_click(" + a + ")")
+  new_button.innerHTML = resumeData[a].properties.position;
+  button_area.appendChild(new_button);
+};
