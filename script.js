@@ -15,6 +15,17 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: mapbox_tolken
 }).addTo(resume_map);
 
+function generate_popup(feature, layer){
+  var title = "<h1>" + feature.properties.position + "</h1>";
+  var sub_title = "<h2>" + feature.properties.employer + "</h2>";
+  var body = "<p>" + feature.properties.responsibilities + "</p>";
+  layer.bindPopup(title + sub_title + body)
+}
+
+L.geoJSON(resumeData,{
+  onEachFeature: generate_popup
+}).addTo(resume_map);
+
 function job_click(a){
   console.log(a)
 };
