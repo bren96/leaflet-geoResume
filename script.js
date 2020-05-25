@@ -17,6 +17,20 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: mapbox_tolken
 }).addTo(resume_map);
 
+function scroll_to_resume(){
+  document.getElementById('resume').scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+};
+
+var scroll_up = L.control({position:'topright'});
+scroll_up.onAdd = function () {
+    var div = L.DomUtil.create('div','scroll_up');
+    div.innerHTML = "<i onclick='scroll_to_resume()' class='mdi mdi-arrow-up'></i>";
+    div.addEventListener('click',document.getElementById("resume").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"}))
+    return div;
+};
+
+scroll_up.addTo(resume_map);
+
 function generate_popup(feature, layer){
   var title = "<h1>" + feature.properties.position + "</h1>";
   var sub_title = "<h2>" + feature.properties.employer + "</h2>";

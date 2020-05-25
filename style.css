@@ -33,6 +33,26 @@ body{
   height: 50px;
 }
 
+
+
+.scroll_up {
+  padding: 0px;
+  margin-left: 0px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  font-size: 36px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+  border-radius: 4px;
+}
+
+.scroll_up a{
+  color: black;
+}
+
 /* DESKTOP/TABLET */
 @media only screen and (min-width: 768px){
   .resume {
