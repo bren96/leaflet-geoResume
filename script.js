@@ -22,12 +22,16 @@ function generate_popup(feature, layer){
   layer.bindPopup(title + sub_title + body)
 }
 
-L.geoJSON(resumeData,{
+var points = L.geoJSON(resumeData,{
   onEachFeature: generate_popup
 }).addTo(resume_map);
 
 function job_click(a){
-  console.log(a)
+  var b = points.getLayers();
+  var lat = b[a].feature.geometry.coordinates[1];
+  var long = b[a].feature.geometry.coordinates[0];
+  resume_map.setView([lat,long],15);
+  b[a].openPopup();
 };
 
 // For each item in resumeData, create button in sidebar
