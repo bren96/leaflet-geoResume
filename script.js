@@ -23,7 +23,7 @@ var scroll_up = L.control({position:'topright'});
 scroll_up.onAdd = function () {
     var div = L.DomUtil.create('div','scroll_up');
     div.innerHTML = "<i onclick='scroll_to_resume()' class='mdi mdi-arrow-up'></i>";
-    div.addEventListener('click',document.getElementById("resume").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"}))
+    div.addEventListener('click',document.getElementById("resume").scrollIntoView({behavior: "smooth", block: "center", inline: "center"}))
     return div;
 };
 scroll_up.addTo(resume_map);
@@ -50,7 +50,7 @@ function job_click(a){
   var long = b[a].feature.geometry.coordinates[0];
   b[a].openPopup();
   resume_map.setView([(lat+0.001),long],17);
-  document.getElementById("mapid").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  document.getElementById("mapid").scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
 };
 
 // For each item in resumeData, create button in sidebar
@@ -64,4 +64,4 @@ for (var a in resumeData){
   button_area.appendChild(new_button);
 };
 
-document.getElementById("resume").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+document.getElementById("resume").scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
