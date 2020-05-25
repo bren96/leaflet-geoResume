@@ -1,10 +1,8 @@
-document.getElementById("resume").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-
 function job_click(){
   document.getElementById('mapid').scrollIntoView();
 };
 
-var resume_map = L.map('mapid').setView([51.505, -0.09], 13);
+var resume_map = L.map('mapid').setView([0,0],8);
 
 var mapbox_tolken = 'pk.eyJ1IjoiYnJlbjk2IiwiYSI6ImNqc2pkNGRvdTA0bm80OW9hOTIxNzB6NG0ifQ.tDovHyl1gFWQ96O3pok0Qg';
 
@@ -17,10 +15,10 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: mapbox_tolken
 }).addTo(resume_map);
 
+// create scroll button control
 function scroll_to_resume(){
   document.getElementById('resume').scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
 };
-
 var scroll_up = L.control({position:'topright'});
 scroll_up.onAdd = function () {
     var div = L.DomUtil.create('div','scroll_up');
@@ -28,9 +26,10 @@ scroll_up.onAdd = function () {
     div.addEventListener('click',document.getElementById("resume").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"}))
     return div;
 };
-
 scroll_up.addTo(resume_map);
 
+
+//create popups
 function generate_popup(feature, layer){
   var title = "<h1>" + feature.properties.position + "</h1>";
   var sub_title = "<h2>" + feature.properties.employer + "</h2>";
@@ -38,16 +37,19 @@ function generate_popup(feature, layer){
   layer.bindPopup(title + sub_title + body)
 }
 
+// add job points
 var points = L.geoJSON(resumeData,{
   onEachFeature: generate_popup
 }).addTo(resume_map);
+resume_map.fitBounds(points.getBounds());
 
+// on click a button in the resume section
 function job_click(a){
   var b = points.getLayers();
   var lat = b[a].feature.geometry.coordinates[1];
   var long = b[a].feature.geometry.coordinates[0];
-  resume_map.setView([lat,long],17);
   b[a].openPopup();
+  resume_map.setView([(lat+0.001),long],17);
   document.getElementById("mapid").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
 };
 
@@ -61,3 +63,5 @@ for (var a in resumeData){
   new_button.innerHTML = resumeData[a].properties.position;
   button_area.appendChild(new_button);
 };
+
+document.getElementById("resume").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});

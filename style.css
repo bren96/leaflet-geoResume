@@ -65,4 +65,7 @@ body{
     width: 75%;
     float: left;
   }
+  .scroll_up{
+    display: none;
+  }
 }
