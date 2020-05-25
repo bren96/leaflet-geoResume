@@ -1,3 +1,5 @@
+document.getElementById("resume").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+
 function job_click(){
   document.getElementById('mapid').scrollIntoView();
 };
@@ -30,8 +32,9 @@ function job_click(a){
   var b = points.getLayers();
   var lat = b[a].feature.geometry.coordinates[1];
   var long = b[a].feature.geometry.coordinates[0];
-  resume_map.setView([lat,long],15);
+  resume_map.setView([lat,long],17);
   b[a].openPopup();
+  document.getElementById("mapid").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
 };
 
 // For each item in resumeData, create button in sidebar
