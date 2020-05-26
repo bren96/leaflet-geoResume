@@ -19,7 +19,9 @@ body{
   text-align: left;
   min-height: 100%;
   width: 100%;
-  background-color: hsla(0, 0%, 90%, 1);
+  background-color: hsla(0, 0%, 99%, 1);
+  border-bottom: 1px solid rgb(196, 196, 196);
+  border-right: 0px;
 }
 
 .map {
@@ -90,8 +92,9 @@ body{
 }
 
 #resume-title img{
-  height: 100px;
+  height: 125px;
   border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 #resume-title p{
@@ -102,13 +105,14 @@ body{
 @media only screen and (min-width: 768px){
   .resume {
     height: 100vh;
-    width: 25%;
+    width: 30%;
     float: left;
     border-right: 1px solid rgb(196, 196, 196);
+    border-bottom: 0px;
   }
   .map {
     height: 100vh;
-    width: 75%;
+    width: 70%;
     float: left;
   }
   .scroll_up{
