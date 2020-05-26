@@ -52,7 +52,7 @@ function job_click(a){
   var lat = b[a].feature.geometry.coordinates[1];
   var long = b[a].feature.geometry.coordinates[0];
   b[a].openPopup();
-  resume_map.setView([(lat+0.001),long],17);
+  resume_map.setView([(lat+0.007),long],14);
   document.getElementById("mapid").scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
 };
 
