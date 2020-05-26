@@ -5,14 +5,16 @@ function job_click(){
 var resume_map = L.map('mapid').setView([0,0],8);
 
 var mapbox_token = 'pk.eyJ1IjoiYnJlbjk2IiwiYSI6ImNqc2pkNGRvdTA0bm80OW9hOTIxNzB6NG0ifQ.tDovHyl1gFWQ96O3pok0Qg';
+var mapbox_style = 'https://api.mapbox.com/styles/v1/bren96/{id}/tiles/256/{z}/{x}/{y}@2x?access_token={access_token}'
 
 
-L.tileLayer('https://api.mapbox.com/styles/v1/bren96/ckaofh5j60z7f1iqpba652b1r/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiYnJlbjk2IiwiYSI6ImNqc2pkNGRvdTA0bm80OW9hOTIxNzB6NG0ifQ.tDovHyl1gFWQ96O3pok0Qg',
-  {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    tileSize: 512,
-    zoomOffset: -1,
+L.tileLayer(mapbox_style, {
+  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+  maxZoom: 18,
+  id: 'ckaofh5j60z7f1iqpba652b1r',
+  tileSize: 512,
+  zoomOffset: -1,
+  access_token: mapbox_token
 }).addTo(resume_map);
 
 // create scroll button control

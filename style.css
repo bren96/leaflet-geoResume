@@ -19,7 +19,7 @@ body{
   text-align: left;
   min-height: 100%;
   width: 100%;
-  background-color: hsla(0, 0%, 99%, 1);
+  background-color: #ffffff;
   border-bottom: 1px solid rgb(196, 196, 196);
   border-right: 0px;
 }
