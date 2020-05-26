@@ -1,4 +1,5 @@
 * {
+  font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
 }
 
@@ -15,25 +16,34 @@ body{
 /* MOBILE */
 .resume {
   padding: 12px;
-  text-align: center;
-  border: solid 1px red;
+  text-align: left;
   min-height: 100%;
   width: 100%;
 }
 .map {
   height: 100%;
   width: 100%;
-  border: solid 1px blue;
 }
 
 .job-button{
+  border-radius: 6px;
+  font-size: 12pt;
+  border: 0px;
+  /* border: 1px solid #2196f3; */
+  color: white;
+  background-color: #2196f3;
   display: block;
   width: 100%;
   height: 50px;
   margin-top: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
-
+#button_div{
+  border-radius: 6px;
+  margin-top: 12px;
+}
 
 .scroll_up {
   padding: 0px;
@@ -51,6 +61,24 @@ body{
 
 .scroll_up a{
   color: black;
+}
+
+#resume-title{
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  padding: 6px;
+  color: black;
+  background-color: white;
+}
+
+#resume-title a{
+  color: #2196f3;
+  font-size: 24px;
+}
+
+#resume-title h1{
+  font-size: 36px;
+  margin-bottom: 6px;
 }
 
 /* DESKTOP/TABLET */
