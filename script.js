@@ -47,17 +47,26 @@ resume_map.fitBounds(points.getBounds());
 
 // on click a button in the resume section
 function job_click(a){
+  resume_map.closePopup();
   var b = points.getLayers();
-  var lat = b[a].feature.geometry.coordinates[1] + 0.001;
+  var lat = b[a].feature.geometry.coordinates[1] + 0.02;
   var long = b[a].feature.geometry.coordinates[0];
   var lat_long = [lat,long];
-  resume_map.flyTo(lat_long, 13, {
-    animate:true,
-    easeLinearity: 1.0,
-    duration: 3,
-    noMoveStart: true,
-  });
-  b[a].openPopup();
+  var current_lat_long = resume_map.getCenter();
+  var dist_diff = Math.abs(long - current_lat_long.lng);
+  if ( dist_diff <= 0.1) {
+    resume_map.flyTo(lat_long, 13, {
+      animate: true,
+      duration: 0.5,
+    });
+    setTimeout(function() {b[a].openPopup()}, 500);
+  } else {
+    resume_map.flyTo(lat_long, 13, {
+      animate:true,
+      duration: 3,
+    });
+    setTimeout(function() {b[a].openPopup()}, 3000);
+  }
   // resume_map.setView(lat_long,14);
   document.getElementById("mapid").scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
 };
