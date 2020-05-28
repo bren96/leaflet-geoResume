@@ -1,3 +1,7 @@
+:root {
+  --primary-color: hsla(0, 80%, 66%, 1);
+}
+
 * {
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
@@ -19,7 +23,7 @@ body{
   text-align: left;
   min-height: 100%;
   width: 100%;
-  background-color: #d9e4f2;
+  background-color: white;
   border-bottom: 1px solid rgb(196, 196, 196);
   border-right: 0px;
   overflow: scroll;
@@ -36,7 +40,7 @@ body{
   border: 0px;
   /* border: 1px solid #2196f3; */
   color: white;
-  background-color: #2196f3;
+  background-color: var(--primary-color);
   display: block;
   width: 100%;
   height: 50px;
@@ -46,9 +50,9 @@ body{
 }
 
 .job-button:hover{
-  border: 1px solid #2196f3;
+  border: 1px solid var(--primary-color);
   background-color: white;
-  color: #2196f3;
+  color: var(--primary-color);
   transition-duration: 0.5s;
 }
 
@@ -85,7 +89,7 @@ body{
 }
 
 #resume-title a{
-  color: #2196f3;
+  color: var(--primary-color);
   font-size: 36px;
 }
 
@@ -107,6 +111,40 @@ body{
 
 #resume-title p{
   margin: 6px;
+}
+
+.marker-pin {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  /* background: #c30b82; */
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -15px 0 0 -15px;
+}
+/* //to draw white circle */
+/* .marker-pin::after {
+  content: '';
+  width: 24px;
+  height: 24px;
+  margin: 3px 0 0 3px;
+  background: #fff;
+  position: absolute;
+  border-radius: 50%;
+ } */
+
+/* // to align icon */
+.custom-div-icon i {
+  color: white;
+  position: absolute;
+  font-size: 18pt;
+  left: 0;
+  right: 0;
+  top: 3px;
+  text-align: center;
+  margin: auto;
 }
 
 /* DESKTOP/TABLET */

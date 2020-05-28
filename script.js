@@ -41,7 +41,17 @@ function generate_popup(feature, layer){
 
 // add job points
 var points = L.geoJSON(resumeData,{
-  onEachFeature: generate_popup
+  onEachFeature: generate_popup,
+  pointToLayer: function (feature, latlng) {
+    return L.marker(latlng, {
+      icon: L.divIcon({
+        className: 'custom-div-icon',
+        html: "<div style='background-color:var(--primary-color)' class='marker-pin'></div><i class='mdi mdi-compass'></i>",
+        iconSize: [30, 42],
+        iconAnchor: [15, 42]
+      })
+    })
+  },
 }).addTo(resume_map);
 resume_map.fitBounds(points.getBounds());
 
