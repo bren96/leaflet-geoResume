@@ -36,7 +36,9 @@ function generate_popup(feature, layer){
   var sub_title = "<h2>" + feature.properties.employer + "</h2>";
   var period = "<h3>" + feature.properties.period + "</h3>";
   var body = "<p>" + feature.properties.responsibilities + "</p>";
-  layer.bindPopup(title + sub_title + period + body);
+  layer.bindPopup(title + sub_title + period + body, {
+    offset: new L.Point(0,-20),
+  });
 }
 
 // add job points
